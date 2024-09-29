@@ -1,8 +1,9 @@
 const eventSource = new EventSource('/events');
 
 eventSource.onmessage = function(event) {
-    console.log("New message: ", event.data);
-    document.querySelector("textarea[name='message']").value = event.data;
+    let str = event.data
+    let newStr = str.replace(/\\n/g, '\n');
+    document.querySelector("textarea[name='message']").value = newStr;
 };
 let timeout = null;
 
@@ -29,10 +30,4 @@ function sendMessage(message) {
             }
             return response.text();
         })
-        .then(data => {
-            console.log('Success:', data);
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
 }

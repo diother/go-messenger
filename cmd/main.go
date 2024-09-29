@@ -4,8 +4,9 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/diother/go-messenger/handlers"
-	"github.com/diother/go-messenger/models"
+	"github.com/diother/go-messenger/internal/handlers"
+	"github.com/diother/go-messenger/internal/models"
+	"github.com/diother/go-messenger/internal/services"
 )
 
 func main() {
@@ -13,7 +14,8 @@ func main() {
 	keyFile := "/etc/letsencrypt/live/hintermann.go.ro/privkey.pem"
 
 	message := models.NewMessage("")
-	messengerHandler := handlers.NewMessengerHandler(message)
+	broadcasterService := services.NewBroadcasterService()
+	messengerHandler := handlers.NewMessengerHandler(broadcasterService, message)
 
 	serveRouteFiles("/icons/", "./web/icons")
 	serveRouteFiles("/css/", "./web/css")
