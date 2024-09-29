@@ -42,7 +42,6 @@ func (h *MessengerHandler) HandleMessenger(w http.ResponseWriter, r *http.Reques
 		h.message.Content = r.FormValue("message")
 
 		message := strings.ReplaceAll(h.message.Content, "\n", "\\n")
-		fmt.Fprintf(w, "data: %s\n\n", message)
 		h.service.Broadcast(message)
 	}
 	return
