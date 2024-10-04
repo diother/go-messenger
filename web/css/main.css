@@ -62,10 +62,15 @@ html,
 */
 
 body {
+  display: flex;
+  flex-direction: column; /* Arrange children vertically */
+  height: 100vh; /* Full height */
   margin: 0;
   /* 1 */
   line-height: inherit;
   /* 2 */
+  background-color: #171717;
+  color: #ededed;
 }
 
 /*
@@ -447,15 +452,33 @@ video {
 }
 
 textarea {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    resize: none;
-    padding: 1.5rem;
-    margin: 0;
-    outline: none;
-    font-size: 1rem;
-    line-height: 1.5;
+  background: #212121;
+  color: inherit;
+  border-radius: 0;
+  flex: 1;  
+  width: 100%;
+  max-width: 560px;
+  left: 50%;
+  resize: none;
+  padding: 1.5rem;
+  margin: 0 auto;
+  outline: none;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+#copyButton {
+  background: #171717;
+  color: white; /* Button text color */
+  border: none; /* No border */
+  padding: 10px 20px; /* Add some padding */
+  cursor: pointer; /* Pointer cursor on hover */
+  height: 45px;
+  max-width: 560px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+#copyButton:hover {
+  background: #333; /* Change background on hover */
 }

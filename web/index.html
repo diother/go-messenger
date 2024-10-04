@@ -6,14 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/x-icon" href="/favicon.ico">
         <link rel="manifest" href="/manifest.json">
-        <meta name="theme-color" content="#000000">
+        <meta name="theme-color" content="#212121">
         <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
         <link rel="stylesheet" href="/css/main.css">
+        <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="/icons/splash-750x1334.png">
     </head>
     <body> 
         <textarea id="message" name="message" placeholder="Ready for transfer!">{{ .Content }}</textarea>
+        <button id="copyButton">Copy to Clipboard</button>
         <script src="/js/messenger.js" defer></script>
     </body>
 </html>

@@ -31,3 +31,9 @@ function sendMessage(message) {
             return response.text();
         })
 }
+
+document.getElementById("copyButton").addEventListener("click", function() {
+    const textarea = document.getElementById("message");
+
+    navigator.clipboard.writeText(textarea.value)
+});
